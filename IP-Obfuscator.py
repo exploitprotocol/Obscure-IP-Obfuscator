@@ -7,105 +7,103 @@ NAME, AUTHOR, VERSION = \
 
 
 def obscure_ip(ip):
-    print ("\n" + NAME + " #v" + VERSION + "\n  " + AUTHOR + "\n")
-    print('[~] Obfuscated IPs:\n')
     for match in re.finditer(r'((?P<a>\d+)\.)((?P<b>\d+)\.)((?P<c>\d+)\.)'
                              '(?P<d>\d+)', ip):
-        print('[+] http://'+str(int(match.group('a'))*256**3 +
+        print(str(int(match.group('a'))*256**3 +
                                 int(match.group('b'))*256**2 +
                                 int(match.group('c'))*256 +
                                 int(match.group('d'))))
-        print('[+] http://'+str(hex(int(match.group('a'))*256**3 +
+        print(str(hex(int(match.group('a'))*256**3 +
                                 int(match.group('b'))*256**2 +
                                 int(match.group('c'))*256 +
                                 int(match.group('d')))))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')) *
+        print(re.sub('o', '', str(oct(int(match.group('a')) *
                                    256**3+int(match.group('b'))*256**2 +
                                    int(match.group('c'))*256 +
-                                   int(match.group('d')))))+'\n')
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')))) +
+                                   int(match.group('d'))))))
+        print(re.sub('o', '', str(oct(int(match.group('a')))) +
                                    '.'+str(oct(int(match.group('b'))))+'.' +
                                    str(oct(int(match.group('c'))))+'.' +
                                    str(oct(int(match.group('d'))))))
-        print('[+] http://'+re.sub('o', '0000000',
+        print(re.sub('o', '0000000',
                                    str(oct(int(match.group('a'))))+'.' +
                                    str(oct(int(match.group('b'))))+'.' +
                                    str(oct(int(match.group('c'))))+'.' +
                                    str(oct(int(match.group('d'))))))
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+        print(str(hex(int(match.group('a'))))+'.' +
               str(hex(int(match.group('b'))))+'.' +
               str(hex(int(match.group('c'))))+'.' +
               str(hex(int(match.group('d')))))
-        print('[+] http://'+re.sub('x', 'x00000000',
+        print(re.sub('x', 'x00000000',
               str(hex(int(match.group('a'))))+'.' +
               str(hex(int(match.group('b'))))+'.' +
               str(hex(int(match.group('c'))))+'.' +
-              str(hex(int(match.group('d')))))+'\n')
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+              str(hex(int(match.group('d'))))))
+        print(str(hex(int(match.group('a'))))+'.' +
               str(hex(int(match.group('b'))))+'.' +
               str(hex(int(match.group('c'))))+'.'+match.group('d'))
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+        print(str(hex(int(match.group('a'))))+'.' +
               str(hex(int(match.group('b'))))+'.' +
               match.group('c')+'.'+match.group('d'))
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+        print(str(hex(int(match.group('a'))))+'.' +
               match.group('b')+'.'+match.group('c')+'.'+match.group('d'))
-        print('[+] http://'+match.group('a')+'.' +
+        print(match.group('a')+'.' +
               str(hex(int(match.group('b'))))+'.' +
               str(hex(int(match.group('c'))))+'.' +
               str(hex(int(match.group('d')))))
-        print('[+] http://'+match.group('a')+'.'+match.group('b')+'.' +
+        print(match.group('a')+'.'+match.group('b')+'.' +
               str(hex(int(match.group('c'))))+'.' +
               str(hex(int(match.group('d')))))
-        print('[+] http://'+match.group('a')+'.'+match.group('b')+'.' +
-              match.group('c')+'.'+str(hex(int(match.group('d'))))+'\n')
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')))) +
+        print(match.group('a')+'.'+match.group('b')+'.' +
+              match.group('c')+'.'+str(hex(int(match.group('d')))))
+        print(re.sub('o', '', str(oct(int(match.group('a')))) +
               '.'+str(oct(int(match.group('b'))))+'.' +
               str(oct(int(match.group('c'))))+'.'+match.group('d')))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')))) +
+        print(re.sub('o', '', str(oct(int(match.group('a')))) +
               '.'+str(oct(int(match.group('b'))))+'.' +
               match.group('c')+'.'+match.group('d')))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')))) +
+        print(re.sub('o', '', str(oct(int(match.group('a')))) +
               '.'+match.group('b')+'.'+match.group('c')+'.'+match.group('d')))
-        print('[+] http://'+re.sub('o', '', match.group('a')+'.' +
+        print(re.sub('o', '', match.group('a')+'.' +
               str(oct(int(match.group('b'))))+'.' +
               str(oct(int(match.group('c'))))+'.' +
               str(oct(int(match.group('d'))))))
-        print('[+] http://'+re.sub('o', '', match.group('a')+'.' +
+        print(re.sub('o', '', match.group('a')+'.' +
               match.group('b')+'.'+str(oct(int(match.group('c'))))+'.' +
               str(oct(int(match.group('d'))))))
-        print('[+] http://'+re.sub('o', '', match.group('a')+'.' +
+        print(re.sub('o', '', match.group('a')+'.' +
               match.group('b')+'.'+match.group('c')+'.' +
-              str(oct(int(match.group('d')))))+'\n')
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+              str(oct(int(match.group('d'))))))
+        print(str(hex(int(match.group('a'))))+'.' +
               str(hex(int(match.group('b'))))+'.'+str(int(match.group('c')) *
               256+int(match.group('d'))))
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+        print(str(hex(int(match.group('a'))))+'.' +
               str(int(match.group('b'))*256**2+int(match.group('c'))*256 +
               int(match.group('d'))))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a')))) +
+        print(re.sub('o', '', str(oct(int(match.group('a')))) +
               '.'+str(oct(int(match.group('b')))))+'.' +
               str(int(match.group('c'))*256+int(match.group('d'))))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a'))))) +
+        print(re.sub('o', '', str(oct(int(match.group('a'))))) +
               '.'+str(int(match.group('b'))*256**2+int(match.group('c'))*256 +
                       int(match.group('d'))))
-        print('[+] http://'+str(hex(int(match.group('a'))))+'.' +
+        print(str(hex(int(match.group('a'))))+'.' +
               re.sub('o', '', str(oct(int(match.group('b')))))+'.' +
               str(int(match.group('c'))*256+int(match.group('d'))))
-        print('[+] http://'+re.sub('o', '', str(oct(int(match.group('a'))))) +
+        print(re.sub('o', '', str(oct(int(match.group('a'))))) +
               '.'+str(hex(int(match.group('b'))))+'.' +
-              str(int(match.group('c'))*256+int(match.group('d')))+'\n')
+              str(int(match.group('c'))*256+int(match.group('d'))))
 
-        print('IPv4 mapping into IPv6 - not resolving as IPv4 do')
-        print('[+] http://'+'::ffff:'+str(hex(int(match.group('a'))*256**3 +
+       # print('IPv4 mapping into IPv6 - not resolving as IPv4 do')
+        print('::ffff:'+str(hex(int(match.group('a'))*256**3 +
               int(match.group('b'))*256**2+int(match.group('c'))*256 +
               int(match.group('d'))))[2:])
-        print('[+] http://'+'0:0:0:0:0:ffff:'+str(hex(int(match.group('a')) *
+        print('0:0:0:0:0:ffff:'+str(hex(int(match.group('a')) *
               256**3+int(match.group('b'))*256**2+int(match.group('c'))*256 +
               int(match.group('d'))))[2:])
-        print('[+] http://'+'0000:0000:0000:0000:0000:ffff:' +
+        print('0000:0000:0000:0000:0000:ffff:' +
               str(hex(int(match.group('a'))*256**3+int(match.group('b'))*256 **
                   2+int(match.group('c'))*256+int(match.group('d'))))[2:])
-        print('[+] http://'+'0000:0000:0000:0000:0000:ffff:'+ip+'\n')
+        print('0000:0000:0000:0000:0000:ffff:'+ip)
 
 
 if __name__ == '__main__':
